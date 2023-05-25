@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-3" [ngStyle]="{'background-color': backColor,'border':fontColor}">
+    <input type="text" [(ngModel)]="backColor">
+  </div>
+  <div class="col-3" [ngStyle]="myStyle">
+    Div 3
+  </div>
+  <div class="col-3">
+    <div class="progress">
+      <div class="progress-bar" [style.width.%]="progress"></div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-6">
+    <table >
+      <tr>
+        <th>Sr no</th>
+        <th>Name</th>
+        <th>City</th>
+        <th>Attendance</th>
+      </tr>
+      <tr *ngFor="let stud of studentArray; let srNo = index">
+        <td>{{srNo+1}}</td>
+        <td>{{stud.name}}</td>
+        <td>{{stud.city}}</td>
+        <td>
+          <div class="progress">
+            <div class="progress-bar" [style.width.%]="stud.attendance"></div>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,52 @@
+<div class="row">
+  <div class="col-4">
+    <p [class]="pColor">firstName {{firstName}}</p>
+    <input type="text" [placeholder]="placholderText" [value]="firstName" name="" [id]="textBoxId">
+  </div>
+</div>
+<div class="row">
+  <div class="col-4">
+    <button class="btn btn-danger" (click)="onDecrement()">Decrement</button>
+  </div>
+  <div class="col-4">{{minLength}}</div>
+  <div class="col-4">
+    <button class="btn btn-success" (click)="onIncrement()">Increment</button>
+  </div>
+</div>
+<div class="row">
+  <div class="col-4">
+    <label for="">Select City</label>
+    <select class="form-control" (change)="onCityChange($event)" name="" id="">
+      <option value="Nagpur">Nagpur</option>
+      <option value="Pune">Pune</option>
+      <option value="Mumbai">Mumbai</option>
+      <option value="Solapur">Solpaur</option>
+    </select>
+  </div>
+  <div class="col-4">
+    selected city : {{selectedCity}}
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-4">
+    <p>cousre Name : {{cousreName}}</p>
+    <input type="text" [(ngModel)]="name">
+    <input type="text" [(ngModel)]="cousreName">
+    <input type="text" [(ngModel)]="empName">
+    <input type="text"  [(ngModel)]="empCity">
+    <input type="number" [(ngModel)]="rollNo">
+    <input type="checkbox" [(ngModel)]="isIndian">
+    <br>
+    <input type="radio" name="gender"  [(ngModel)]="gender" value="male">male
+    <input type="radio" name="gender"  [(ngModel)]="gender" value="female">female
+    <select class="form-control" [(ngModel)]="selectedCity" >
+      <option value="Nagpur">Nagpur</option>
+      <option value="Pune">Pune</option>
+      <option value="Mumbai">Mumbai</option>
+      <option value="Solapur">Solapur</option>
+    </select>
+  </div>
+</div>
+
+

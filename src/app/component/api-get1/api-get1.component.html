@@ -1,0 +1,100 @@
+
+<h4 class="text-center">Get All Course List</h4>
+<table class="table table-bordered">
+  <tr>
+    <th>Sr No</th>
+    <th>Course ID</th>
+    <th>Course Name</th>
+    <th>Course Duration</th>
+    <th>Course Fees </th>
+
+  </tr>
+  <tr *ngFor="let item of candidates ; let i=index">
+    <td>{{i +1}}</td>
+    <td>{{item.courseId}}</td>
+    <td>{{item.courseName}}</td>
+    <td>{{item.courseDuration}}</td>
+    <td>{{item.courseBasicFees}}</td>
+  </tr>
+</table>
+
+<h4 class="text-center">Get All Enrollment</h4>
+<table class="table table-bordered">
+  <tr>
+    <th>Sr No</th>
+    <th>Name</th>
+    <th>Contact</th>
+    <th>Email</th>
+    <th>Course Name </th>
+    <th>Course Id </th>
+    <th>Course Fee </th>
+    <th>Discount</th>
+    <th>Enrollment Date</th>
+    <th>Enrollment Id</th>
+    <th>Enrollment No</th>
+    <th>Candidate Id</th>
+
+  </tr>
+  <tr *ngFor="let item of candidates1 ; let i=index">
+    <td>{{i +1}}</td>
+    <td>{{item.name}}</td>
+    <td>{{item.contactNo}}</td>
+    <td>{{item.email}}</td>
+    <td>{{item.courseName}}</td>
+    <td>{{item.courseId}}</td>
+    <td>{{item.courseFee}}</td>
+    <td>{{item.discount}}</td>
+    <td>{{item.enrollmentDate}}</td>
+    <td>{{item.enrollmentId}}</td>
+    <td>{{item.enrollmentNo}}</td>
+    <td>{{item.candidateId}}</td>
+  </tr>
+</table>
+
+<h4 class="text-center">Get All Question</h4>
+<table class="table table-bordered">
+  <tr>
+    <th>Sr No</th>
+    <th>Language Name</th>
+    <th>Language Id</th>
+    <th>Question</th>
+    <th>Question Details</th>
+    <th>Answer Type</th>
+    <th>Question Id</th>
+    <th>Difficulty Level</th>
+    <th>Is Multiple</th>
+    <th>Is Delected</th>
+
+  </tr>
+  <tr *ngFor="let item of candidates2 ; let i=index">
+    <td>{{i +1}}</td>
+    <td>{{item.languageName}}</td>
+    <td>{{item.languageId}}</td>
+    <td>{{item.question}}</td>
+    <td>{{item.questionDetails}}</td>
+    <td>{{item.answerType}}</td>
+    <td>{{item.questionId}}</td>
+    <td>{{item.difficultyLevel}}</td>
+    <td>{{item.isMultple}}</td>
+    <td>{{item.isDeleted}}</td>
+
+  </tr>
+</table>
+
+<h4 class="text-center">Get All Master</h4>
+<table class="table table-bordered">
+  <tr>
+    <th>Sr No</th>
+    <th>Master Name</th>
+    <th>Master Id</th>
+    <th>Master For</th>
+
+  </tr>
+  <tr *ngFor="let item of candidates3 ; let i=index">
+    <td>{{i +1}}</td>
+    <td>{{item.masterName}}</td>
+    <td>{{item.masterId}}</td>
+    <td>{{item.masterFor}}</td>
+
+  </tr>
+</table>

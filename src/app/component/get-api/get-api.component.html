@@ -1,0 +1,68 @@
+<div class="row">
+  <div class="col-6">
+    <div class="card">
+      <div class="card-header bg-success">
+        Candidate Form
+      </div>
+      <div class="card-body">
+        <form novalidate="" action="" class="form-wrap ">
+
+          <div class="row mt-2">
+            <div class="col-md-12 mt-2"><label for="">Name</label>
+              <input type="text" name="name" [(ngModel)]="canidateObj.name" class="form-control ">
+
+            </div>
+            <div class="col-md-12"><label for="">Email</label>
+              <input type="email" name="email" [(ngModel)]="canidateObj.email" class="form-control ">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mt-2"><label for="">Password</label>
+              <input type="password" [(ngModel)]="canidateObj.password" name="password" class="form-control ">
+            </div>
+            <div class="col-md-6 mt-2"><label for="">ContactNo</label>
+              <input type="number" [(ngModel)]="canidateObj.contactNo" name="contactno"
+                class="form-control ng-untouched ng-pristine ng-valid">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <label for="">City</label>
+              <input type="text" [(ngModel)]="canidateObj.city"
+                name="city" class="form-control ">
+            </div>
+            <div class="col-md-6"><label for="">Education</label><input type="text" [(ngModel)]="canidateObj.education"
+                name="Education" class="form-control ">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <label for="">CollegeName</label>
+              <input type="text" name="CollegeName" [(ngModel)]="canidateObj.collegeName" class="form-control ">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 text-center">
+              <button class="btn btn-success" (click)="onSaveCandidate()">Save</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<table class="table table-bordered table-hover">
+  <tr>
+    <th>Name</th>
+    <th>Contact</th>
+    <th>Email</th>
+    <th>Education</th>
+  </tr>
+  <tr *ngFor="let item of candidates">
+    <td>{{item.name}}</td>
+    <td>{{item.contactNo}}</td>
+    <td>{{item.email}}</td>
+    <td>{{item.education}}</td>
+  </tr>
+</table>

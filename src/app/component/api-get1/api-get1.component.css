@@ -1,0 +1,11 @@
+h4{
+  color:rgb(228, 24, 58)
+}
+
+th{
+  background-color: aquamarine;
+}
+th,td{
+  border: 1px solid black;
+  text-align: center;
+}

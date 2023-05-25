@@ -1,0 +1,80 @@
+<div class="row">
+  <div class="col-3">
+    <div class="p-4 m-2" [class]="div1Class">
+      div 1 // dynamic class using property binding
+    </div>
+  </div>
+  <div class="col-3">
+    <div class="p-4 m-2" [ngClass]="isIndian ? 'bg-success text-white':'bg-danger text-primary'">
+      div 2 // dynamic class using ngClass with condition
+    </div>
+  </div>
+  <div class="col-3">
+    <div class="p-4" [ngClass]="selectedColor">
+      selected color - {{selectedColor}}
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-3">
+
+  </div>
+  <div class="col-3">
+    <button (click)="isIndian= !isIndian">Toggle Indian Value</button>
+  </div>
+  <div class="col-3">
+    <select [(ngModel)]="selectedColor">
+      <option *ngFor="let item of bgColorArray">{{item}}</option>
+    </select>
+    <input type="text" [(ngModel)]="selectedColor">
+  </div>
+</div>
+<div class="row">
+  <div class="" [ngClass]="isSidePanelOpen?'col-8':'col-12'">
+    <div class="card">
+      <div class="card-header bg-success">
+        list Card
+      </div>
+    </div>
+  </div>
+  <div class="col-4" *ngIf="isSidePanelOpen">
+    <div class="card">
+      <div class="card-header bg-success">
+        create card
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-body ">
+    <table class="table table-bordered">
+      <tr>
+        <th>Sr no</th>
+        <th>Name</th>
+        <th>City</th>
+        <th>Gender</th>
+        <th>Is Indian</th>
+
+      </tr>
+      <tr *ngFor="let stud of studentArray; let srNo = index">
+        <td>{{srNo+1}}</td>
+        <td>{{stud.name}}</td>
+        <td>{{stud.city}}</td>
+        <!-- <td>
+            <i class="fa fa-male" aria-hidden="true"></i>
+            <i class="fa fa-female" aria-hidden="true"></i>
+          </td> -->
+        <td>
+
+          <i class="" [ngClass]="stud.gender == 'male'? 'fa fa-male':'fa fa-female'"></i>
+        </td>
+        <td>
+          <span *ngIf="stud.isIndian == true">Yes</span>
+          <span *ngIf="stud.isIndian == false">No</span>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

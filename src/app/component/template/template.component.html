@@ -1,0 +1,69 @@
+<form #frm="ngForm">
+  <div class="row">
+    <div class="col-3">
+      <label for="">Name</label>
+      <input type="text" name="name" #studname="ngModel" required minlength="3" [(ngModel)]="studentObj.name"
+        class="form-control">
+      <div class="text-danger" *ngIf="studname.touched">
+        <span *ngIf="studname.errors?.['required']">Name is required </span>
+        <span *ngIf="studname.errors?.['minlength']">Minimum 3 char required </span>
+      </div>
+    </div>
+    <div class="col-3">
+      <label for="">City</label>
+      <input type="text" name="city" #studCity="ngModel" required minlength="5" [(ngModel)]="studentObj.city"
+        class="form-control">
+      <div class="text-danger" *ngIf="studCity.touched">
+        <span *ngIf="studCity.errors?.['required']">City is required </span>
+        <span *ngIf="studCity.errors?.['minlength']">Minimum 5 char required </span>
+      </div>
+    </div>
+    <div class="col-3">
+      <label for="">Email</label>
+      <input type="text" name="email" #studEmail="ngModel" required
+        pattern="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"
+        [(ngModel)]="studentObj.email" class="form-control">
+      <div class="text-danger" *ngIf="studEmail.touched">
+        <span *ngIf="studEmail.errors?.['required']">Email is required </span>
+        <span *ngIf="studEmail.errors?.['pattern']">email is not proper </span>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-3">
+      <label for="">Pan Card</label>
+      <input type="text" name="panCard" #studpanCard="ngModel" required
+        pattern="^([a-zA-Z]){5}([0-9]){4}([a-zA-Z]){1}?$" [(ngModel)]="studentObj.panCard" class="form-control">
+      <div class="text-danger" *ngIf="studpanCard.touched">
+        <span *ngIf="studpanCard.errors?.['required']">Pan Card is required </span>
+        <span *ngIf="studpanCard.errors?.['pattern']">Pan Card is not proper </span>
+      </div>
+    </div>
+    <div class="col-3">
+      <label for="">Pin Code</label>
+      <input type="text" name="pincode" #studPin="ngModel" required minlength="6" [(ngModel)]="studentObj.pincode"
+        class="form-control">
+      <div class="text-danger" *ngIf="studPin.touched">
+        <span *ngIf="studPin.errors?.['required']">Pincode is required </span>
+        <span *ngIf="studPin.errors?.['minlength']">Pincode is not proper </span>
+      </div>
+    </div>
+    <div class="col-3">
+      <label for="">Address</label>
+      <textarea name="address" id="" #studAdd="ngModel" required minlength="7" [(ngModel)]="studentObj.address"
+        class="form-control"></textarea>
+      <div class="text-danger" *ngIf="studAdd.touched">
+        <span *ngIf="studAdd.errors?.['required']">Address is required </span>
+        <span *ngIf="studAdd.errors?.['minlength']">Address is not proper </span>
+      </div>
+    </div>
+  </div>
+  <div class="row pt-3">
+    <div class="col-3 text-center">
+      <button class="btn btn-sm btn-secondary">Cancel</button>
+    </div>
+    <div class="col-3 text-center">
+      <button class="btn btn-sm btn-success" [disabled]="!frm.form.valid">Save Student</button>
+    </div>
+  </div>
+</form>

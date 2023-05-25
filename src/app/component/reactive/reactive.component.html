@@ -1,0 +1,97 @@
+<div class="container-fluid">
+  <div class="row">
+    <form [formGroup]="userform">
+      <div class="row">
+        <div class="col-md-4">
+          <label for="">First Name</label>
+          <input type="text" formControlName="firstName" class="form-control">
+          <div class="text-danger"
+            *ngIf="userform.controls['firstName'].touched">
+            <span *ngIf="userform.controls['firstName'].errors?.['required']">This
+              Field is Required</span>
+
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <label for="">Last Name</label>
+          <input type="text" formControlName="lastName" class="form-control">
+          <div class="text-danger"
+            *ngIf="userform.controls['lastName'].touched">
+            <span *ngIf="userform.controls['lastName'].errors?.['required']">This
+              field is required</span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <label for="">Email</label>
+          <input type="text" formControlName="email" class="form-control">
+          <div class="text-danger" *ngIf="userform.controls['email'].touched">
+            <span *ngIf="userform.controls['email'].errors?.['required']">This Field Is required</span>
+            <span *ngIf="userform.controls['email'].errors?.['email']">Email
+              is not proper</span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <label for="">Contact</label>
+          <input type="text" formControlName="phoneNo" class="form-control">
+          <div class="text-danger" *ngIf="userform.controls['phoneNo'].touched">
+            <span *ngIf="userform.controls['phoneNo'].errors?.['required']">This Field Is required</span>
+            <span *ngIf="userform.controls['phoneNo'].errors?.['email']">Email
+              is not proper</span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <label for="">Status</label>
+          <select name="" id="" class="form-control">
+            <option value="">Select</option>
+            <option value="Pending">Pending</option>
+            <option value="Approved">Approved</option>
+            <option value="Rejected">Rejected</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <label for="">Country</label>
+          <select name="" id="" class="form-control">
+            <option value="">Select</option>
+            <option value="Country">Country</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <label for="">City</label>
+          <select name="" id="" class="form-control">
+            <option value="">Select</option>
+            <option value="City">City</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <label for="">State</label>
+          <select name="" id="" class="form-control">
+            <option value="">Select</option>
+            <option value="State">State</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-3">
+          <button class="btn btn-danger" (click)="clearForm()">Clear</button>
+        </div>
+        <div class="col-3">
+           <button class="btn btn-success" [disabled]="userform.invalid" (click)="onSave()">Save</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

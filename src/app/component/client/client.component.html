@@ -1,0 +1,101 @@
+<app-alert  [spanText]="alertText" [mainText]="'Danger'"></app-alert>
+
+<app-progress-bar [progress]="90"></app-progress-bar>
+<div class="row">
+  <div class="col-8">
+    <div class="card">
+      <div class="card-header bg-success">
+        <div class="row">
+          <div class="col-6">Client List</div>
+          <div class="col-6 text-end">
+            <button class="btn btn-sm btn-primary">Add client</button>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <table class="table">
+          <tr>
+            <th>Sr No</th>
+            <th>Client</th>
+            <th>Busness</th>
+            <th>Contact </th>
+            <th>Email</th>
+
+          </tr>
+          <tr *ngFor="let item of clientArray; let sr=index">
+            <td>{{sr +1}}</td>
+            <td>{{item.clientName}}</td>
+            <td>{{item.businessName}}</td>
+            <td>{{item.contactNo}}</td>
+            <td>{{item.email}}</td>
+            <td>
+              <button class="btn  btn-sm btn-primary" (click)="onEdit(item)">Edit</button>
+              <button class="btn  btn-sm btn-danger" (click)="onDelete(item.clientId)">Delete</button>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="card">
+      <div class="card-header bg-success">
+        <div class="row">
+          <div class="col-6">Client Form</div>
+          <div class="col-6 text-end">
+            <button class="btn btn-sm btn-primary">Close</button>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-6">
+            <label for="">client Name</label>
+            <input type="text" [(ngModel)]="clientObj.clientName" class="form-control">
+          </div>
+          <div class="col-6">
+            <label for="">business Name</label>
+            <input type="text" [(ngModel)]="clientObj.businessName" class="form-control">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <label for="">contact Person</label>
+            <input type="text" [(ngModel)]="clientObj.contactPerson" class="form-control">
+          </div>
+          <div class="col-6">
+            <label for="">contact No</label>
+            <input type="text" [(ngModel)]="clientObj.contactNo" class="form-control">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <label for="">alt contact No</label>
+            <input type="text" [(ngModel)]="clientObj.altcontactNo" class="form-control">
+          </div>
+          <div class="col-6">
+            <label for="">email</label>
+            <input type="text" [(ngModel)]="clientObj.email" class="form-control">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <label for="">logo</label>
+            <input type="text" [(ngModel)]="clientObj.logo" class="form-control">
+          </div>
+        </div>
+        <div class="row text-center pt-3">
+          <div class="col-6">
+            <button class="btn btn-sm btn-secondary">Cancel</button>
+          </div>
+          <div class="col-6">
+
+            <button class="btn btn-sm btn-primary" *ngIf="clientObj.clientId ==0" (click)="OnSaveClient()">Save</button>
+            <button class="btn btn-sm btn-primary" *ngIf="clientObj.clientId !== 0"
+              (click)="OnUpdateClient()">Update</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

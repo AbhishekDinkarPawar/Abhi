@@ -1,0 +1,26 @@
+<input type="text" class="form-control" [(ngModel)]="searchText" (ngModelChange)="onFilter($event)">
+<div class="row">
+  <div class="col-4">
+    <input type="text" class="form-control" [(ngModel)]="item.fName" placeholder="First Name ">
+  </div>
+  <div class="col-4">
+    <input type="text" class="form-control" [(ngModel)]="item.mName" placeholder="Middle Name ">
+  </div>
+  <div class="col-4">
+    <input type="text" class="form-control" [(ngModel)]="item.lName" placeholder="Last Name ">
+  </div>
+</div>
+<div class="row">
+  <table>
+    <tr>
+      <th>First Name</th>
+      <th>Middle Name</th>
+      <th>Last Name</th>
+    </tr>
+    <tr *ngFor="let item of userArr">
+      <th>{{item.fName}}</th>
+      <th>{{item.mName}}</th>
+      <th>{{item.lName}}</th>
+    </tr>
+  </table>
+</div>

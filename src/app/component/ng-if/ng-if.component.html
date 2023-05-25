@@ -1,0 +1,41 @@
+<div class="row">
+  <div class="col-2">
+    <div class="bg-success p-4" *ngIf = "true">
+      Div 1 - using directly true false value
+    </div>
+  </div>
+  <div class="col-2">
+    <div class="bg-secondary p-4" *ngIf = "isDiv2Visible">
+      Div 2 - using true / false value from varibale
+    </div>
+  </div>
+  <div class="col-2">
+    <div class="bg-danger p-4" *ngIf = "isDiv3Visible">
+      Div 3 - toggle div using one function only
+    </div>
+  </div>
+  <div class="col-2">
+    <div class="bg-primary p-4" *ngIf="name==surname">
+      Div 4 -using comparision
+    </div>
+  </div>
+  <div class="col-2">
+    <div class="bg-primary p-4" *ngIf="studentObj.isCheck==true">
+      Div 5 - access using object
+    </div>
+  </div>
+</div>
+<div class="row pt-3">
+  <div class="col-2">
+
+  </div>
+  <div class="col-2">
+    <button class="btn btn-sm btn-success" (click)="hideDiv2()" > Hide Div 2</button>
+    <button class="btn btn-sm btn-danger ms-2" (click)="showDiv2()"> show Div 2</button>
+  </div>
+  <div class="col-2">
+    <button class="btn btn-sm btn-danger ms-3" (click)="toggleDiv3()" >toggle Div 3</button>
+  </div>
+
+</div>
+
